@@ -1,0 +1,47 @@
+
+
+<h1 class="bianco animated zoomIn">Tours</h1>
+ 
+<% @tours.each do |tour| %>
+  <div class="container-fluid animated zoomIn">
+    <div class="row">
+    <div class="col-4">
+    
+    </div>
+      <div class="col-8">
+          <div class="card mb-3 bglgray" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <% if tour.cover.attached? %>
+                  <%= link_to (image_tag url_for(tour.cover),class: 'w-100'), tour %>
+                <% end %>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title bianco"><%= tour.denominazione %></h5>
+                  <p class="card-title bianco">partenza da: <%= tour.luogopartenza %></p>
+                  <p class="card-title bianco">giorni e orari partenza : <%= tour.giorniorarip %></p>
+                  <p class="card-title bianco">Durata: <%= tour.durata %> ore</p>
+                  <p class="card-title bianco">Partecipanti massimi:<%= tour.maxpartecipanti %></p>
+                  <br>
+                  <%= link_to 'Modifica', edit_tour_path(tour), class:'btn btn-dark' %>
+                  <%= link_to 'Cancella', tour, method: :delete, data: { confirm: 'Sei sicuro?' }, class:'btn btn-dark' %>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-4">
+
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+<br>
+
+<%= link_to 'Nuovo Tour', new_tour_path, class:'btn btn-dark' %>
+
+<br><br>

@@ -1,0 +1,36 @@
+
+
+<div class="animated zoomIn">
+  <p class="bianco">
+    <strong>Cognome:</strong>
+    <%= @utenti.cognome %>
+  </p>
+
+  <p class="bianco">
+    <strong>Nome:</strong>
+    <%= @utenti.nome %>
+  </p>
+
+  <p class="bianco">
+    <strong>Indirizzo:</strong>
+    <%= @utenti.indirizzo %>
+  </p>
+
+  <p class="bianco">
+    <strong>Email:</strong>
+    <%= @utenti.email %>
+  </p>
+
+  <p class="bianco">
+    <strong>Numero:</strong>
+    <%= @utenti.numero %>
+  </p>
+
+  <p class="bianco">
+    <strong>Note:</strong>
+    <%= @utenti.note %>
+  </p>
+</div>
+
+<%= link_to 'Modifica', edit_utenti_path(@utenti), class:'btn btn-dark' %> |
+<%= link_to 'Indietro', utentis_path, class:'btn btn-dark' %>

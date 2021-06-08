@@ -1,0 +1,22 @@
+
+
+<div class="container animated zoomIn">
+  <div class="row">
+    <div class="col-sm">
+      <% if @tour.cover.attached? %>
+        <%= image_tag url_for(@tour.cover)%>
+      <% end %>
+      <br>
+      <h3 class="bianco"><%= @tour.denominazione %></h3>
+      <p class="bianco"><%= @tour.descrizione %></p>
+      <p class="bianco"><%= @tour.descrizioneing %></p>
+      <h4 class="bianco">partenza da: <%= @tour.luogopartenza %></h4>
+      <h4 class="bianco"><%= @tour.giorniorarip %></h4>
+      <h4 class="bianco">durata: <%= @tour.durata %> ore</h4>
+      <h4 class="bianco">partecipanti massimi: <%= @tour.maxpartecipanti %></h4>
+    </div>
+  </div>
+</div>
+<br>
+<%= link_to 'Modifica', edit_tour_path(@tour), class:'btn btn-dark' %> 
+<%= link_to 'Indietro', tours_path, class:'btn btn-dark' %>

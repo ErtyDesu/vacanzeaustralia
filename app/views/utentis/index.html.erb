@@ -1,0 +1,39 @@
+
+
+<h1 class="bianco animated zoomIn">Utenti</h1>
+
+
+<table class="table animated zoomIn">
+  <thead>
+    <tr>
+    <th class="bianco">Cognome</th>
+    <th class="bianco">Nome</th>
+    <th class="bianco">Indirizzo</th>
+    <th class="bianco">Email</th>
+    <th class="bianco">Numero</th>
+    <th class="bianco">Note</th>
+    <th class="bianco"></th>
+    <th class="bianco"></th>
+    <th class="bianco"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @utentis.each do |utenti| %>
+      <tr>
+        <td class="bianco"><%= utenti.cognome %></td>
+        <td class="bianco"><%= utenti.nome %></td>
+        <td class="bianco"><%= utenti.indirizzo %></td>
+        <td class="bianco"><%= utenti.email %></td>
+        <td class="bianco"><%= utenti.numero %></td>
+        <td class="bianco"><%= utenti.note %></td>
+        <td class="bianco"><%= link_to 'Mostra', utenti, class: 'btn btn-dark' %></td>
+        <td class="bianco"><%= link_to 'Modifica', edit_utenti_path(utenti), class: 'btn btn-dark' %></td>
+        <td class="bianco"><%= link_to 'Elimina', utenti, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'Nuovo Utente', new_utenti_path, class:'btn btn-dark' %>
+<br>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  denominazione: MyString
+  descrizione: MyText
+  descrizioneing: MyText
+  luogopartenza: MyString
+  giorniorarip: MyText
+  durata: 1
+  maxpartecipanti: 1
+
+two:
+  denominazione: MyString
+  descrizione: MyText
+  descrizioneing: MyText
+  luogopartenza: MyString
+  giorniorarip: MyText
+  durata: 1
+  maxpartecipanti: 1

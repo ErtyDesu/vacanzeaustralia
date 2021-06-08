@@ -1,0 +1,86 @@
+<%= form_with(model: tour) do |form| %>
+  <% if tour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
+
+      <ul>
+        <% tour.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+<div class="container-fluid animated zoomIn">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm form-label">
+          <%= form.label :denominazione, class: 'form-label bianco'%>
+          <%= form.text_field :denominazione, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm form-label">
+          <%= form.label :descrizione, class: 'form-label bianco'%>
+          <%= form.text_field :descrizione, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm form-label">
+          <%= form.label 'descrizione inglese', class: 'form-label bianco' %>
+          <%= form.text_field :descrizioneing, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm form-label">
+          <%= form.label 'luogo partenza', class: 'form-label bianco' %>
+          <%= form.text_field :luogopartenza, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm form-label">
+          <%= form.label 'giorni e orari partenza', class: 'form-label bianco' %>
+          <%= form.text_field :giorniorarip, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm form-label">
+          <%= form.label :durata, class: 'form-label bianco' %>
+          <%= form.number_field :durata, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm form-label">
+          <%= form.label 'partecipanti massimi', class: 'form-label bianco' %>
+          <%= form.number_field :maxpartecipanti, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm form-label">
+          <%= form.label :cover, class: 'form-label bianco' %>
+          <%= form.file_field :cover, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Aggiungi/modifica tour', class: 'btn btn-dark' %>
+  </div>
+  <br>
+<% end %>

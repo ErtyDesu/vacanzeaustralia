@@ -1,0 +1,73 @@
+<%= form_with(model: utenti) do |form| %>
+  <% if utenti.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(utenti.errors.count, "error") %> prohibited this utenti from being saved:</h2>
+
+      <ul>
+        <% utenti.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+
+
+<div class="container-fluid animated zoomIn">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm form-label">
+        <%= form.label :cognome, class: 'form-label bianco'%>
+        <%= form.text_field :cognome, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm form-label">
+        <%= form.label :nome, class: 'form-label bianco'%>
+        <%= form.text_field :nome, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm form-label">
+        <%= form.label :indirizzo, class: 'form-label bianco'%>
+        <%= form.text_field :indirizzo, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm form-label">
+        <%= form.label :email, class: 'form-label bianco'%>
+        <%= form.text_field :email, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm form-label">
+        <%= form.label :numero, class: 'form-label bianco' %>
+        <%= form.number_field :numero, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm form-label">
+        <%= form.label :note, class: 'form-label bianco' %>
+        <%= form.text_field :note, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="actions">
+    <%= form.submit 'Crea/modifica utente', class:'btn btn-dark' %>
+  </div>
+
+  <br>
+<% end %>
